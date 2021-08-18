@@ -25,7 +25,6 @@ public class PusherClientPlugin implements FlutterPlugin, MethodCallHandler {
   private Pusher pusher;
   private final String CHANNEL = "lazycoder16/pusher_client";
   private final String EVENT_STREAM = "lazycoder16/pusher_client_stream";
-  //private ChannelEventListener channelEventListener;
 
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
