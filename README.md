@@ -8,14 +8,14 @@ Here is a small example of code which uses all the available functions (Useful f
 
 ```dart
 Pusher pusher = new Pusher(appKey, cluster);
-pusher.connect(); // Connects to the pusher service
-Channel channel = pusher.subscribe(channelName);
-channel.bind(eventName, (String data) {
+await pusher.connect(); // Connects to the pusher service
+Channel channel = await pusher.subscribe(channelName);
+await channel.bind(eventName, (String data) {
   print(data);
 }); // Callback recieves the data as a String when the event is trigerred
 
 // Later in the code
-channel.unbind(eventName); // Stop listening to that event
-pusher.unsubscribe(channelName); // Stop listening to events in that channel
-pusher.disconnect(); // Disconnect from the pusher service
+await channel.unbind(eventName); // Stop listening to that event
+await pusher.unsubscribe(channelName); // Stop listening to events in that channel
+await pusher.disconnect(); // Disconnect from the pusher service
 ```
